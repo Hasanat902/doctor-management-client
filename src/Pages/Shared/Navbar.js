@@ -10,7 +10,6 @@ const Navbar = () => {
   const logout = () => {
     signOut(auth);
   };
-  
 
   const menuItems = (
     <>
@@ -30,10 +29,13 @@ const Navbar = () => {
         <Link to="/about">About</Link>
       </li>
       <li>
-        {user?
-        <button class="btn btn-ghost" onClick={logout}>Sign Out</button>
-        : 
-        <Link to="/login">Login</Link>}
+        {user ? (
+          <button className="btn btn-ghost" onClick={logout}>
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
     </>
   );
